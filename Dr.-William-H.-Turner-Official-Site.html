@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. William H. Turner - Scholar, Author, Professor</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#8B4513',secondary:'#4A6741'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 100%), url('https://public.readdy.ai/ai/img_res/ea5edd5a9611ebd3c0dfec0c7e1eaa08.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #8B4513;
+        }
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-checkbox:checked {
+            background-color: #8B4513;
+        }
+        .custom-checkbox:checked::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 3px;
+            left: 6px;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #8B4513;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .custom-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #8B4513;
+            cursor: pointer;
+        }
+        .custom-range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #8B4513;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Dr. William H. Turner</a>
+            <nav class="hidden md:flex space-x-6 text-gray-700">
+                <a href="#" class="font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
+                <a href="#publications" class="font-medium hover:text-primary transition-colors">Publications</a>
+                <a href="#services" class="font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#media" class="font-medium hover:text-primary transition-colors">Media</a>
+                <a href="#events" class="font-medium hover:text-primary transition-colors">Events</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer">
+                <i class="ri-menu-line ri-2x text-primary"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section h-[600px] flex items-center">
+        <div class="container mx-auto px-4 w-full">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-5xl font-bold mb-4">Dr. William H. Turner</h1>
+                <p class="text-xl mb-2">2024–2026 William R. Kenan, Jr. Professor at Berea College</p>
+                <p class="text-lg mb-6">Scholar, Author, and Expert on Black Life and Culture in the Appalachian South</p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Purchase Autographed Copy</button>
+                    <button class="bg-gray-600 text-white px-6 py-3 font-medium !rounded-button opacity-80 cursor-not-allowed whitespace-nowrap">Audiobook Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">About Dr. Turner</h2>
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-1/3">
+                    <img src="https://public.readdy.ai/ai/img_res/2c02a78a6f50a6d90efbb12f6daf3cc6.jpg" alt="Dr. William H. Turner" class="w-full rounded-lg shadow-lg object-cover object-top">
+                </div>
+                <div class="lg:w-2/3">
+                    <h3 class="text-3xl font-semibold mb-6">A Leading Voice in African American Appalachian Studies</h3>
+                    <p class="text-lg mb-6">Dr. William H. Turner stands as one of the foremost authorities on Black life and culture in the Appalachian South. With decades of dedicated research, teaching, and community engagement, he has illuminated the often-overlooked histories and contributions of African Americans in this region.</p>
+                    
+                    <div class="bg-gray-50 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
+                        <h4 class="text-xl font-semibold mb-3">William R. Kenan, Jr. Professor at Berea College</h4>
+                        <p class="mb-3">Dr. Turner currently holds the prestigious position of William R. Kenan, Jr. Professor at Berea College for the 2024-2026 term. This distinguished appointment, funded by the William R. Kenan, Jr. Charitable Trust, recognizes faculty who demonstrate exceptional excellence in both teaching and scholarly research.</p>
+                        <p>Through this position, Dr. Turner continues to mentor the next generation of scholars while advancing critical research on the intersection of race, place, and identity in Appalachia.</p>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-4">Academic Background</h4>
+                    <p class="mb-6">Dr. Turner earned his Ph.D. in Sociology from the University of Notre Dame. His groundbreaking dissertation on African American communities in Appalachia laid the foundation for his lifelong commitment to documenting and preserving these important cultural histories.</p>
+                    
+                    <h4 class="text-xl font-semibold mb-4">Career Highlights</h4>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Distinguished Professor and Academic Administrator at multiple institutions</li>
+                        <li>Research Associate at the University of Kentucky Appalachian Center</li>
+                        <li>Consultant for the Appalachian Regional Commission</li>
+                        <li>Vice President for University Engagement at Prairie View A&M University</li>
+                        <li>Interim President of Kentucky State University</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Publications & Book Sales</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center mb-16">
+                <div class="lg:w-2/5">
+                    <img src="https://public.readdy.ai/ai/img_res/88e691a1b1cd851ec5e5821fcd916034.jpg" alt="The Harlan Renaissance Book Cover" class="w-full rounded-lg shadow-xl object-cover object-top">
+                </div>
+                <div class="lg:w-3/5">
+                    <h3 class="text-3xl font-semibold mb-4">The Harlan Renaissance</h3>
+                    <p class="text-lg mb-6">Dr. Turner's landmark work chronicles the vibrant Black communities that flourished in Harlan County, Kentucky during the coal mining boom of the 1920s and 1930s. Through meticulous research and personal narratives, he reveals a previously untold chapter of Appalachian history.</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Purchase Autographed Copy</button>
+                        <button class="bg-white border-2 border-primary hover:bg-gray-50 text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap">Learn More</button>
+                        <button class="bg-white border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 font-medium !rounded-button whitespace-nowrap">Bulk Orders</button>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                        <h4 class="text-xl font-semibold mb-4">Praise for Dr. Turner's Work</h4>
+                        <div class="space-y-4">
+                            <blockquote class="border-l-4 border-primary pl-4 italic">
+                                "Bill Turner knows more about Black life and culture in the mountains of the American South than anybody in the world."
+                                <footer class="text-gray-600 mt-2 not-italic">— Alex Haley, Author of "Roots"</footer>
+                            </blockquote>
+                            <blockquote class="border-l-4 border-primary pl-4 italic">
+                                "Bill has been an inspiration to me in going deeper into our history...our shared stories."
+                                <footer class="text-gray-600 mt-2 not-italic">— bell hooks, Feminist Scholar and Author</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold mb-4">Upcoming Publications</h4>
+                    <p>Dr. Turner is currently working on a new manuscript exploring the migration patterns of African Americans between Appalachia and urban centers during the Great Migration. Sign up for our newsletter to receive updates on this exciting project.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Academic Articles</h3>
+                    <p class="mb-4">Access Dr. Turner's scholarly publications on African American Appalachian history, culture, and sociology.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Publication List →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Co-Authored Works</h3>
+                    <p class="mb-4">Explore collaborative research projects and edited volumes featuring Dr. Turner's contributions.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Browse Collaborations →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Media Appearances</h3>
+                    <p class="mb-4">Listen to interviews, podcasts, and watch documentary appearances featuring Dr. Turner.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Access Media Library →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Upcoming Events</h2>
+            
+            <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden mb-16">
+                <div class="p-8">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-2/3">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-primary text-white text-sm font-medium px-3 py-1 rounded-full mr-3">Featured Event</span>
+                                <span class="text-gray-600">May 9–10, 2025</span>
+                            </div>
+                            <h3 class="text-3xl font-semibold mb-4">Jack Ellis Writers Workshop</h3>
+                            <p class="text-lg mb-6">Join us for the annual Jack Ellis Writers Workshop featuring Dr. William H. Turner as the keynote speaker. This two-day event brings together established and emerging writers focused on Appalachian studies, African American history, and cultural preservation.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Keynote Address</h4>
+                            <p class="mb-6">"I hope John Stephenson, Alex Haley and My Harlan County Mama Are Proud"</p>
+                            
+                            <div class="flex flex-wrap gap-4">
+                                <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Register Now</button>
+                                <button class="bg-white border-2 border-primary hover:bg-gray-50 text-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap">View Program</button>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold mb-4">Event Details</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                            <i class="ri-calendar-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">Dates:</span> May 9–10, 2025
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                            <i class="ri-map-pin-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">Location:</span> Berea College, Hutchins Library, Berea, KY
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                            <i class="ri-time-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">Time:</span> 9:00 AM - 4:30 PM (both days)
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                            <i class="ri-ticket-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <span class="font-medium">Registration Fee:</span> $75 (Students: $40)
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-gray-600 text-sm">June 15, 2025</span>
+                        <h3 class="text-xl font-semibold my-2">Book Reading & Signing</h3>
+                        <p class="mb-4">Join Dr. Turner for a reading from "The Harlan Renaissance" followed by a discussion and book signing at the Kentucky History Center.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-gray-600 text-sm">July 8-10, 2025</span>
+                        <h3 class="text-xl font-semibold my-2">Appalachian Studies Conference</h3>
+                        <p class="mb-4">Dr. Turner will lead a panel discussion on "Recovering Lost Histories: Black Communities in Appalachia" at the annual conference.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="text-gray-600 text-sm">August 22, 2025</span>
+                        <h3 class="text-xl font-semibold my-2">Community Heritage Day</h3>
+                        <p class="mb-4">A celebration of Appalachian Black history featuring a keynote address by Dr. Turner, oral history collection, and community exhibits.</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                            <i class="ri-mic-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Keynote Speaking</h3>
+                        <p class="mb-6">Dr. Turner delivers compelling, insightful presentations on African American Appalachian history, cultural preservation, and the intersection of race and place. His talks are suitable for academic conferences, community events, corporate diversity initiatives, and educational institutions.</p>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Inquire About Availability</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                            <i class="ri-book-open-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Historical Consultation</h3>
+                        <p class="mb-6">With decades of research experience, Dr. Turner provides expert consultation for documentary filmmakers, museum curators, historical societies, and authors working on projects related to Black Appalachian history and culture. His deep knowledge ensures historical accuracy and nuanced representation.</p>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Request Consultation</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                            <i class="ri-group-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Academic Workshops</h3>
+                        <p class="mb-6">Dr. Turner conducts specialized workshops for faculty, graduate students, and researchers on methodologies for studying marginalized communities, oral history collection, archival research, and community-engaged scholarship. These interactive sessions provide practical skills and theoretical frameworks.</p>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Schedule a Workshop</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+                            <i class="ri-newspaper-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Media Interviews</h3>
+                        <p class="mb-6">Dr. Turner is available for interviews with journalists, podcasters, and media outlets seeking expert commentary on topics related to Appalachian studies, African American history, rural development, and contemporary issues facing Black communities in rural America.</p>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Media Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="media" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Media & Resources</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg h-[400px] flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <div class="w-20 h-20 mx-auto flex items-center justify-center bg-white/20 rounded-full mb-6">
+                                <i class="ri-play-fill ri-2x text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-2">Featured Interview</h3>
+                            <p class="mb-4">Dr. Turner discusses "The Harlan Renaissance" and the forgotten history of Black coal miners in Appalachia</p>
+                            <span class="text-gray-300 text-sm">Kentucky Educational Television • 28:45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-4">Recent Media Appearances</h3>
+                        <ul class="space-y-4">
+                            <li class="pb-4 border-b border-gray-200">
+                                <span class="text-gray-600 text-sm">April 2, 2025</span>
+                                <h4 class="font-medium my-1">NPR's "All Things Considered"</h4>
+                                <p class="text-sm text-gray-700">Interview on the legacy of Black Appalachian culture</p>
+                            </li>
+                            <li class="pb-4 border-b border-gray-200">
+                                <span class="text-gray-600 text-sm">March 15, 2025</span>
+                                <h4 class="font-medium my-1">The Atlantic</h4>
+                                <p class="text-sm text-gray-700">Featured in article "Reclaiming Forgotten Histories"</p>
+                            </li>
+                            <li class="pb-4 border-b border-gray-200">
+                                <span class="text-gray-600 text-sm">February 28, 2025</span>
+                                <h4 class="font-medium my-1">Appalachian Voices Podcast</h4>
+                                <p class="text-sm text-gray-700">Episode 42: "Coal, Community, and Culture"</p>
+                            </li>
+                            <li>
+                                <a href="#" class="text-primary font-medium hover:underline">View All Media →</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-article-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Articles & Essays</h3>
+                    <p class="mb-4">Access Dr. Turner's published articles, essays, and opinion pieces on various aspects of African American Appalachian studies.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Browse Articles →</a>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-file-pdf-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Research Papers</h3>
+                    <p class="mb-4">Download scholarly papers, research findings, and academic presentations by Dr. Turner on Black Appalachian history.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Research →</a>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                        <i class="ri-gallery-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Photo Archive</h3>
+                    <p class="mb-4">Explore historical photographs and visual documentation of Black communities in Appalachia collected throughout Dr. Turner's career.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Archive →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Contact</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+                        <p class="mb-8">For speaking engagements, book orders, media inquiries, or general questions, please fill out the form or contact Dr. Turner directly.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 mt-1">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <p class="text-gray-700">whturnerphd@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 mt-1">
+                                    <i class="ri-building-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Office</h4>
+                                    <p class="text-gray-700">Hutchins Library, Room 304<br>Berea College<br>Berea, KY 40404</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 mt-1">
+                                    <i class="ri-time-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Office Hours</h4>
+                                    <p class="text-gray-700">Tuesday & Thursday: 1:00 PM - 4:00 PM<br>Or by appointment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <form class="bg-white p-8 rounded-lg shadow-md">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your name">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your email address">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Subject of your message">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your message"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center mb-6">
+                                <input type="checkbox" id="newsletter" class="custom-checkbox mr-3">
+                                <label for="newsletter" class="text-gray-700">Subscribe to newsletter for updates on events and publications</label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-12">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-['Playfair_Display'] font-bold mb-4">Dr. William H. Turner</h3>
+                    <p class="max-w-md text-gray-400">Scholar, Author, and Expert on Black Life and Culture in the Appalachian South. 2024–2026 William R. Kenan, Jr. Professor at Berea College.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#publications" class="text-gray-400 hover:text-white transition-colors">Publications</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#media" class="text-gray-400 hover:text-white transition-colors">Media</a></li>
+                            <li><a href="#events" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press Kit</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Newsletter</a></li>
+                            <li class="flex space-x-4 mt-4">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                                    <i class="ri-twitter-x-line text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                                    <i class="ri-linkedin-line text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-colors">
+                                    <i class="ri-facebook-line text-white"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2025 Dr. William H. Turner. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.ri-menu-line').parentElement;
+            const nav = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                nav.classList.toggle('hidden');
+                nav.classList.toggle('flex');
+                nav.classList.toggle('flex-col');
+                nav.classList.toggle('absolute');
+                nav.classList.toggle('top-16');
+                nav.classList.toggle('right-4');
+                nav.classList.toggle('bg-white');
+                nav.classList.toggle('p-4');
+                nav.classList.toggle('shadow-lg');
+                nav.classList.toggle('rounded-lg');
+                nav.classList.toggle('z-50');
+            });
+        });
+    </script>
+</body>
+</html>
